@@ -1,0 +1,163 @@
+[
+  {
+    "Hora": "23:49:08.277",
+    "Piloto": "038 - F.MASSA",
+    "Nº Volta": "1",
+    "Tempo Volta": "1:02.852",
+    "Velocidade Média da Volta": "44,275"
+  },
+  {
+    "Hora": "23:49:10.858",
+    "Piloto": "033 - R.BARRICHELLO",
+    "Nº Volta": "1",
+    "Tempo Volta": "1:04.352",
+    "Velocidade Média da Volta": "43,243"
+  },
+  {
+    "Hora": "23:49:11.075",
+    "Piloto": "002 - K.RAIKKONEN",
+    "Nº Volta": "1",
+    "Tempo Volta": "1:04.108",
+    "Velocidade Média da Volta": "43,408"
+  },
+  {
+    "Hora": "23:49:12.667",
+    "Piloto": "023 - M.WEBBER",
+    "Nº Volta": "1",
+    "Tempo Volta": "1:04.414",
+    "Velocidade Média da Volta": "43,202"
+  },
+  {
+    "Hora": "23:49:30.976",
+    "Piloto": "015 - F.ALONSO",
+    "Nº Volta": "1",
+    "Tempo Volta": "1:18.456",
+    "Velocidade Média da Volta": "35,47"
+  },
+  {
+    "Hora": "23:50:11.447",
+    "Piloto": "038 - F.MASSA",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:03.170",
+    "Velocidade Média da Volta": "44,053"
+  },
+  {
+    "Hora": "23:50:14.860",
+    "Piloto": "033 - R.BARRICHELLO",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:04.002",
+    "Velocidade Média da Volta": "43,48"
+  },
+  {
+    "Hora": "23:50:15.057",
+    "Piloto": "002 - K.RAIKKONEN",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:03.982",
+    "Velocidade Média da Volta": "43,493"
+  },
+  {
+    "Hora": "23:50:17.472",
+    "Piloto": "023 - M.WEBBER",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:04.805",
+    "Velocidade Média da Volta": "42,941"
+  },
+  {
+    "Hora": "23:50:37.987",
+    "Piloto": "015 - F.ALONSO",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:07.011",
+    "Velocidade Média da Volta": "41,528"
+  },
+  {
+    "Hora": "23:51:14.216",
+    "Piloto": "038 - F.MASSA",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:02.769",
+    "Velocidade Média da Volta": "44,334"
+  },
+  {
+    "Hora": "23:51:18.576",
+    "Piloto": "033 - R.BARRICHELLO",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:03.716",
+    "Velocidade Média da Volta": "43,675"
+  },
+  {
+    "Hora": "23:51:19.044",
+    "Piloto": "002 - K.RAIKKONEN",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:03.987",
+    "Velocidade Média da Volta": "43,49"
+  },
+  {
+    "Hora": "23:51:21.759",
+    "Piloto": "023 - M.WEBBER",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:04.287",
+    "Velocidade Média da Volta": "43,287"
+  },
+  {
+    "Hora": "23:51:46.691",
+    "Piloto": "015 - F.ALONSO",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:08.704",
+    "Velocidade Média da Volta": "40,504"
+  },
+  {
+    "Hora": "23:52:01.796",
+    "Piloto": "011 - S.VETTEL",
+    "Nº Volta": "1",
+    "Tempo Volta": "3:31.315",
+    "Velocidade Média da Volta": "13,169"
+  },
+  {
+    "Hora": "23:52:17.003",
+    "Piloto": "038 - F.MASSA",
+    "Nº Volta": "4",
+    "Tempo Volta": "1:02.787",
+    "Velocidade Média da Volta": "44,321"
+  },
+  {
+    "Hora": "23:52:22.586",
+    "Piloto": "033 - R.BARRICHELLO",
+    "Nº Volta": "4",
+    "Tempo Volta": "1:04.010",
+    "Velocidade Média da Volta": "43,474"
+  },
+  {
+    "Hora": "23:52:22.120",
+    "Piloto": "002 - K.RAIKKONEN",
+    "Nº Volta": "4",
+    "Tempo Volta": "1:03.076",
+    "Velocidade Média da Volta": "44,118"
+  },
+  {
+    "Hora": "23:52:25.975",
+    "Piloto": "023 - M.WEBBER",
+    "Nº Volta": "4",
+    "Tempo Volta": "1:04.216",
+    "Velocidade Média da Volta": "43,335"
+  },
+  {
+    "Hora": "23:53:06.741",
+    "Piloto": "015 - F.ALONSO",
+    "Nº Volta": "4",
+    "Tempo Volta": "1:20.050",
+    "Velocidade Média da Volta": "34,763"
+  },
+  {
+    "Hora": "23:53:39.660",
+    "Piloto": "011 - S.VETTEL",
+    "Nº Volta": "2",
+    "Tempo Volta": "1:37.864",
+    "Velocidade Média da Volta": "28,435"
+  },
+  {
+    "Hora": "23:54:57.757",
+    "Piloto": "011 - S.VETTEL",
+    "Nº Volta": "3",
+    "Tempo Volta": "1:18.097",
+    "Velocidade Média da Volta": "35,633"
+  }
+]
