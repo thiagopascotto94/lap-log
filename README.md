@@ -9,6 +9,7 @@
 
 ### Passo 2 - Exibição de Placar
 
+- Criar função para converter tudo em segundos/milisegundos.
 - Lógica simples, basta filtrar os corredores que completaram as 4 voltas, corredores que não completaram as 4 voltas serão considerados desclassificados;
 - Para obter o pódio, basta filtrar todas as 4 voltas ordenados pela hora de forma decrescente, ou seja, o corredor com data/hora mais antiga é o primeiro colocado e o restante na sequencia.
 
@@ -32,4 +33,7 @@
 - Filtrar os corredores/pilotos que completaram as 4 voltas;
 - Iterar os dados comparando com os dados de "Hora" dos corredores;
 
+# Como gero meus commits?
 
+- Utilizo uma combinação de `git diff` e IA para gerar no formato que eu gosto;
+- Para acelerar minha produtividade eu criei um agente especialista em gerar a mensagens de commit no formato que eu acredito ser o melhor.

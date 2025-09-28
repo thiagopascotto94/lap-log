@@ -2,6 +2,20 @@
 // Load the JSON data
 $data = json_decode(file_get_contents('../db/laps.json'), true);
 
+// Helper function to convert time to seconds
+function timeToSeconds($time) {
+    list($h, $m, $s) = explode(':', $time);
+    $s = floatval(str_replace(',', '.', $s));
+    return $h * 3600 + $m * 60 + $s;
+}
+
+// Helper function to convert lap time to seconds
+function lapTimeToSeconds($time) {
+    list($m, $s) = explode(':', $time);
+    $s = floatval(str_replace(',', '.', $s));
+    return $m * 60 + $s;
+}
+
 // Step 2: Display Scoreboard (Podium)
 // Filter pilots who completed 4 laps
 $completedLaps = array_filter($data, function($lap) {
@@ -10,7 +24,7 @@ $completedLaps = array_filter($data, function($lap) {
 
 // Sort by Hora ascending (earliest first)
 usort($completedLaps, function($a, $b) {
-    return strtotime($a['Hora']) - strtotime($b['Hora']);
+    return timeToSeconds($a['Hora']) <=> timeToSeconds($b['Hora']);
 });
 
 $podium = array_slice($completedLaps, 0, 3);
@@ -30,7 +44,7 @@ $bestLaps = [];
 foreach ($pilots as $pilot => $laps) {
     // Sort by Tempo Volta ascending (fastest first)
     usort($laps, function($a, $b) {
-        return strtotime($a['Tempo Volta']) - strtotime($b['Tempo Volta']);
+        return lapTimeToSeconds($a['Tempo Volta']) <=> lapTimeToSeconds($b['Tempo Volta']);
     });
     $bestLaps[$pilot] = $laps[0];
 }
@@ -47,12 +61,14 @@ foreach ($pilots as $pilot => $laps) {
 
 // Step 6: Arrival times relative to winner
 $winner = $podium[0];
-$winnerTime = strtotime($winner['Hora']);
+$winnerTime = timeToSeconds($winner['Hora']);
 $arrivalTimes = [];
 foreach ($completedLaps as $lap) {
     if ($lap['Piloto'] !== $winner['Piloto']) {
-        $timeDiff = strtotime($lap['Hora']) - $winnerTime;
-        $arrivalTimes[$lap['Piloto']] = gmdate('H:i:s', $timeDiff);
+        $timeDiff = timeToSeconds($lap['Hora']) - $winnerTime;
+        $minutes = floor($timeDiff / 60);
+        $seconds = $timeDiff % 60;
+        $arrivalTimes[$lap['Piloto']] = sprintf('%02d:%05.2f', $minutes, $seconds);
     }
 }
 
