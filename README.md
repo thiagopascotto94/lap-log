@@ -4,8 +4,8 @@
 
 ### Passo 1 - Preparando dados
 
-**Extração dos dados** - Utilizado uma ferramenta propria para extrair a tabela. (https://thiagopascotto94.github.io/ocr-gemini/)
-**Conversão em JSON** - Para simular um banco de dados, converti os dados para JSON e salvos em `db/laps.json`
+- **Extração dos dados** - Utilizado uma ferramenta propria para extrair a tabela. (https://thiagopascotto94.github.io/ocr-gemini/)
+- **Conversão em JSON** - Para simular um banco de dados, converti os dados para JSON e salvos em `db/laps.json`
 
 ### Passo 2 - Exibição de Placar
 
@@ -33,7 +33,10 @@
 - Filtrar os corredores/pilotos que completaram as 4 voltas;
 - Iterar os dados comparando com os dados de "Hora" dos corredores;
 
-# Como gero meus commits?
+### Como gero meus commits?
 
 - Utilizo uma combinação de `git diff` e IA para gerar no formato que eu gosto;
 - Para acelerar minha produtividade eu criei um agente especialista em gerar a mensagens de commit no formato que eu acredito ser o melhor.
+
+### Layout 
+- Feito com uso de IA.
