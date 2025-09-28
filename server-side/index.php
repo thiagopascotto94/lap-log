@@ -1,78 +1,18 @@
 <?php
-// Load the JSON data
-$data = json_decode(file_get_contents('../db/laps.json'), true);
+include 'helpers.php';
+include 'data_loader.php';
+include 'podium_calculator.php';
+include 'pilots_data.php';
+include 'best_laps_calculator.php';
+include 'average_speeds_calculator.php';
+include 'arrival_times_calculator.php';
 
-// Helper function to convert time to seconds
-function timeToSeconds($time) {
-    list($h, $m, $s) = explode(':', $time);
-    $s = floatval(str_replace(',', '.', $s));
-    return $h * 3600 + $m * 60 + $s;
-}
-
-// Helper function to convert lap time to seconds
-function lapTimeToSeconds($time) {
-    list($m, $s) = explode(':', $time);
-    $s = floatval(str_replace(',', '.', $s));
-    return $m * 60 + $s;
-}
-
-// Step 2: Display Scoreboard (Podium)
-// Filter pilots who completed 4 laps
-$completedLaps = array_filter($data, function($lap) {
-    return $lap['Nº Volta'] == 4;
-});
-
-// Sort by Hora ascending (earliest first)
-usort($completedLaps, function($a, $b) {
-    return timeToSeconds($a['Hora']) <=> timeToSeconds($b['Hora']);
-});
-
-$podium = array_slice($completedLaps, 0, 3);
-
-// Step 3: Unique pilot data
-$pilots = [];
-foreach ($data as $lap) {
-    $pilot = $lap['Piloto'];
-    if (!isset($pilots[$pilot])) {
-        $pilots[$pilot] = [];
-    }
-    $pilots[$pilot][] = $lap;
-}
-
-// Step 4: Best lap per pilot
-$bestLaps = [];
-foreach ($pilots as $pilot => $laps) {
-    // Sort by Tempo Volta ascending (fastest first)
-    usort($laps, function($a, $b) {
-        return lapTimeToSeconds($a['Tempo Volta']) <=> lapTimeToSeconds($b['Tempo Volta']);
-    });
-    $bestLaps[$pilot] = $laps[0];
-}
-
-// Step 5: Average speed per pilot
-$averageSpeeds = [];
-foreach ($pilots as $pilot => $laps) {
-    $totalSpeed = 0;
-    foreach ($laps as $lap) {
-        $totalSpeed += floatval(str_replace(',', '.', $lap['Velocidade Média da Volta']));
-    }
-    $averageSpeeds[$pilot] = $totalSpeed / count($laps);
-}
-
-// Step 6: Arrival times relative to winner
-$winner = $podium[0];
-$winnerTime = timeToSeconds($winner['Hora']);
-$arrivalTimes = [];
-foreach ($completedLaps as $lap) {
-    if ($lap['Piloto'] !== $winner['Piloto']) {
-        $timeDiff = timeToSeconds($lap['Hora']) - $winnerTime;
-        $minutes = floor($timeDiff / 60);
-        $seconds = $timeDiff % 60;
-        $arrivalTimes[$lap['Piloto']] = sprintf('%02d:%05.2f', $minutes, $seconds);
-    }
-}
-
-// Output the results
+$data = loadData();
+$podium = getPodium($data);
+$pilots = getPilots($data);
+$bestLaps = getBestLaps($data);
+$averageSpeeds = getAverageSpeeds($data);
+$arrivalTimes = getArrivalTimes($data);
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
